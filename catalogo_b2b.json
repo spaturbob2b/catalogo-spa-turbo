@@ -1,0 +1,10 @@
+[
+  {
+    "sku": "TESTE001",
+    "titulo": "Produto Exemplo SPA",
+    "imagem": "https://via.placeholder.com/300x200?text=Produto+SPA",
+    "preco": 199.99,
+    "link": "https://www.spaturbo.com.br/TESTE001/p",
+    "categoria": "Acessórios"
+  }
+]
