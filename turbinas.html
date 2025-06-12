@@ -1,118 +1,110 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Turbinas | SPA Turbo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Turbinas | Catálogo SPA Turbo</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #001a71;
-    }
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .card {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 10px;
-      width: 200px;
-      text-align: center;
-    }
-    .card img {
-      width: 100%;
-      height: auto;
-    }
-    .card h2 {
-      font-size: 16px;
-      color: #333;
-    }
-    .card p {
-      font-weight: bold;
-      color: #0070CD;
-    }
-    .card a {
-      display: inline-block;
-      margin-top: 8px;
-      background: #0070CD;
-      color: white;
-      padding: 6px 12px;
-      text-decoration: none;
-      border-radius: 4px;
-    }
+    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
+    header, footer { background: #000; color: #fff; text-align: center; padding: 10px 0; }
+    .info-bar { background: #001a71; color: #fff; padding: 10px; text-align: center; }
+    .container { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; padding: 30px; max-width: 1800px; margin: auto; }
+    .product-card { background: #fff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); overflow: hidden; text-align: center; padding: 10px; }
+    .product-card img { width: 100%; height: 200px; object-fit: cover; }
+    .product-name { font-size: 14px; margin-top: 10px; font-weight: bold; }
+    .product-price { font-size: 13px; color: green; }
+    .voltar { text-align: center; margin-bottom: 30px; }
+    .voltar a { background: #001a71; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; }
   </style>
 </head>
 <body>
-  <h1>Turbinas</h1>
-  <div class="grid">
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+1" alt="Produto Fictício 1">
-      <h2>Produto Fictício 1</h2>
-      <p>R$99.90</p>
-      <a href="https://www.spaturbo.com.br/produto-1" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+2" alt="Produto Fictício 2">
-      <h2>Produto Fictício 2</h2>
-      <p>R$100.90</p>
-      <a href="https://www.spaturbo.com.br/produto-2" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+3" alt="Produto Fictício 3">
-      <h2>Produto Fictício 3</h2>
-      <p>R$101.90</p>
-      <a href="https://www.spaturbo.com.br/produto-3" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+4" alt="Produto Fictício 4">
-      <h2>Produto Fictício 4</h2>
-      <p>R$102.90</p>
-      <a href="https://www.spaturbo.com.br/produto-4" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+5" alt="Produto Fictício 5">
-      <h2>Produto Fictício 5</h2>
-      <p>R$103.90</p>
-      <a href="https://www.spaturbo.com.br/produto-5" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+6" alt="Produto Fictício 6">
-      <h2>Produto Fictício 6</h2>
-      <p>R$104.90</p>
-      <a href="https://www.spaturbo.com.br/produto-6" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+7" alt="Produto Fictício 7">
-      <h2>Produto Fictício 7</h2>
-      <p>R$105.90</p>
-      <a href="https://www.spaturbo.com.br/produto-7" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+8" alt="Produto Fictício 8">
-      <h2>Produto Fictício 8</h2>
-      <p>R$106.90</p>
-      <a href="https://www.spaturbo.com.br/produto-8" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+9" alt="Produto Fictício 9">
-      <h2>Produto Fictício 9</h2>
-      <p>R$107.90</p>
-      <a href="https://www.spaturbo.com.br/produto-9" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+10" alt="Produto Fictício 10">
-      <h2>Produto Fictício 10</h2>
-      <p>R$108.90</p>
-      <a href="https://www.spaturbo.com.br/produto-10" target="_blank">Ver Produto</a>
-    </div>
+  <header><strong>CATÁLOGO B2B SPA TURBO</strong></header>
+  <div class="info-bar">Em caso de dúvidas, entre em contato com o vendedor ou pelo WhatsApp: (11) 99687-3840.</div>
+  <div class="voltar"><a href="index.html">← Voltar à página principal</a></div>
+  <div class="container">
+    
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brturbina-spa16-t2-eixo-46-mm-rotor-44mm-40-com-valvula-copy-4542-/p" target="_blank">
+                <img src="nan" alt="GOLF WEEK - Turbina SPA16 / T2 - eixo 46 mm rotor 44mm COM válvula incorporada"/>
+                <div class="product-name">GOLF WEEK - Turbina SPA16 / T2 - eixo 46 mm rotor 44mm COM válvula incorporada</div>
+                <div class="product-price">nan</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brturbina-spa16-t2-eixo-46-mm-rotor-44mm-40-com-valvula-copy-4542-/p" target="_blank">
+                <img src="nan" alt="GOLF WEEK - Turbina SPA16 / T2 - eixo 46 mm rotor 44mm COM válvula incorporada"/>
+                <div class="product-name">GOLF WEEK - Turbina SPA16 / T2 - eixo 46 mm rotor 44mm COM válvula incorporada</div>
+                <div class="product-price">nan</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brturbina-spa-200-sv-sem-valvula-de-alivio-incorporada-copy(6151)/p" target="_blank">
+                <img src="nan" alt="Turbina SPA200SV T2 sem válvula de alívio incorporada Copy"/>
+                <div class="product-name">Turbina SPA200SV T2 sem válvula de alívio incorporada Copy</div>
+                <div class="product-price">nan</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brabracadeira-para-ponteira-abafador-escapamento-moto-no-estado/p" target="_blank">
+                <img src="spaturbo.vteximg.com.br/arquivos/ids/215477/SPAARR2244LL--1-.jpg" alt="Abraçadeira para Ponteira Abafador Escapamento De Moto - No Estado (SPAARR2244LL)"/>
+                <div class="product-name">Abraçadeira para Ponteira Abafador Escapamento De Moto - No Estado (SPAARR2244LL)</div>
+                <div class="product-price">21.208000000000002</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brflange-entrada-de-oleo-t3-c-rosca-m14-junta/p" target="_blank">
+                <img src="spaturbo.vteximg.com.br/arquivos/ids/176301/ADEOL02-EXJT01.jpg" alt="Flange entrada de óleo T3 com rosca M14 + Junta entrada de óleo T3"/>
+                <div class="product-name">Flange entrada de óleo T3 com rosca M14 + Junta entrada de óleo T3</div>
+                <div class="product-price">48.568000000000005</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brespigao-retorno-de-oleo-turbina-t2-em-latao/p" target="_blank">
+                <img src="spaturbo.vteximg.com.br/arquivos/ids/155621/ADESP04-20-282-29.jpg" alt="Espigão retorno de óleo turbina T2"/>
+                <div class="product-name">Espigão retorno de óleo turbina T2</div>
+                <div class="product-price">37.168</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brkit-de-retorno-de-leo-para-carter-com-saida-reta-de-3-4-e-mangueira-de-45cm/p" target="_blank">
+                <img src="spaturbo.vteximg.com.br/arquivos/ids/190252/ADKTVL07--1--PRETA.jpg" alt="Kit de retorno de óleo para cárter com saída reta de 3/4" e mangueira de 45cm - Padrão T3"/>
+                <div class="product-name">Kit de retorno de óleo para cárter com saída reta de 3/4" e mangueira de 45cm - Padrão T3</div>
+                <div class="product-price">137.48800000000003</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brkit-de-retorno-de-leo-para-carter-com-saida-curva-reta-de-3-4-e-mangueira-de-20cm/p" target="_blank">
+                <img src="spaturbo.vteximg.com.br/arquivos/ids/172430/ADKTVL09.jpg" alt="Kit de retorno de óleo para cárter com saída reta de 3/4" e mangueira de 20cm - Padrão T3"/>
+                <div class="product-name">Kit de retorno de óleo para cárter com saída reta de 3/4" e mangueira de 20cm - Padrão T3</div>
+                <div class="product-price">121.528</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brflange-retorno-de-oleo-para-carter-10an/p" target="_blank">
+                <img src="spaturbo.vteximg.com.br/arquivos/ids/172439/ADSDOLKT03--5-.jpg" alt="Flange retorno de óleo para cárter 10AN (T3 / T4)"/>
+                <div class="product-name">Flange retorno de óleo para cárter 10AN (T3 / T4)</div>
+                <div class="product-price">63.120000000000005</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.bradaptador-de-turbina/p" target="_blank">
+                <img src="spaturbo.vteximg.com.br/arquivos/ids/192931/SPAARR2108LL--1-.jpg" alt="ADAPTADOR P/ SOLDA ORING TURBINA 2  1/4"/>
+                <div class="product-name">ADAPTADOR P/ SOLDA ORING TURBINA 2  1/4</div>
+                <div class="product-price">56.168</div>
+            </a>
+        </div>
+        
   </div>
+  <footer>SPA Turbo &copy; Todos os direitos reservados</footer>
 </body>
 </html>

@@ -1,118 +1,110 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Termicos | SPA Turbo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Termicos | Catálogo SPA Turbo</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #001a71;
-    }
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .card {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      padding: 10px;
-      width: 200px;
-      text-align: center;
-    }
-    .card img {
-      width: 100%;
-      height: auto;
-    }
-    .card h2 {
-      font-size: 16px;
-      color: #333;
-    }
-    .card p {
-      font-weight: bold;
-      color: #0070CD;
-    }
-    .card a {
-      display: inline-block;
-      margin-top: 8px;
-      background: #0070CD;
-      color: white;
-      padding: 6px 12px;
-      text-decoration: none;
-      border-radius: 4px;
-    }
+    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
+    header, footer { background: #000; color: #fff; text-align: center; padding: 10px 0; }
+    .info-bar { background: #001a71; color: #fff; padding: 10px; text-align: center; }
+    .container { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; padding: 30px; max-width: 1800px; margin: auto; }
+    .product-card { background: #fff; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); overflow: hidden; text-align: center; padding: 10px; }
+    .product-card img { width: 100%; height: 200px; object-fit: cover; }
+    .product-name { font-size: 14px; margin-top: 10px; font-weight: bold; }
+    .product-price { font-size: 13px; color: green; }
+    .voltar { text-align: center; margin-bottom: 30px; }
+    .voltar a { background: #001a71; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; }
   </style>
 </head>
 <body>
-  <h1>Termicos</h1>
-  <div class="grid">
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+1" alt="Produto Fictício 1">
-      <h2>Produto Fictício 1</h2>
-      <p>R$99.90</p>
-      <a href="https://www.spaturbo.com.br/produto-1" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+2" alt="Produto Fictício 2">
-      <h2>Produto Fictício 2</h2>
-      <p>R$100.90</p>
-      <a href="https://www.spaturbo.com.br/produto-2" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+3" alt="Produto Fictício 3">
-      <h2>Produto Fictício 3</h2>
-      <p>R$101.90</p>
-      <a href="https://www.spaturbo.com.br/produto-3" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+4" alt="Produto Fictício 4">
-      <h2>Produto Fictício 4</h2>
-      <p>R$102.90</p>
-      <a href="https://www.spaturbo.com.br/produto-4" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+5" alt="Produto Fictício 5">
-      <h2>Produto Fictício 5</h2>
-      <p>R$103.90</p>
-      <a href="https://www.spaturbo.com.br/produto-5" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+6" alt="Produto Fictício 6">
-      <h2>Produto Fictício 6</h2>
-      <p>R$104.90</p>
-      <a href="https://www.spaturbo.com.br/produto-6" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+7" alt="Produto Fictício 7">
-      <h2>Produto Fictício 7</h2>
-      <p>R$105.90</p>
-      <a href="https://www.spaturbo.com.br/produto-7" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+8" alt="Produto Fictício 8">
-      <h2>Produto Fictício 8</h2>
-      <p>R$106.90</p>
-      <a href="https://www.spaturbo.com.br/produto-8" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+9" alt="Produto Fictício 9">
-      <h2>Produto Fictício 9</h2>
-      <p>R$107.90</p>
-      <a href="https://www.spaturbo.com.br/produto-9" target="_blank">Ver Produto</a>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200x200?text=Produto+10" alt="Produto Fictício 10">
-      <h2>Produto Fictício 10</h2>
-      <p>R$108.90</p>
-      <a href="https://www.spaturbo.com.br/produto-10" target="_blank">Ver Produto</a>
-    </div>
+  <header><strong>CATÁLOGO B2B SPA TURBO</strong></header>
+  <div class="info-bar">Em caso de dúvidas, entre em contato com o vendedor ou pelo WhatsApp: (11) 99687-3840.</div>
+  <div class="voltar"><a href="index.html">← Voltar à página principal</a></div>
+  <div class="container">
+    
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brProtetor-termico-de-Turbina-T3-sem-mola-sem-uso-no-estado/p" target="_blank">
+                <img src="spaturbo.vteximg.com.br/arquivos/ids/187107/SPAARR1969LL.jpg" alt="Protetor térmico de Turbina T3 sem mola, sem uso, no estado"/>
+                <div class="product-name">Protetor térmico de Turbina T3 sem mola, sem uso, no estado</div>
+                <div class="product-price">123044.0</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brmanta-de-isolamento-termico-1m-x-10m-cor-natural-copy-3860-/p" target="_blank">
+                <img src="nan" alt="Defletor Térmico De Peças De Alta Temperatura "/>
+                <div class="product-name">Defletor Térmico De Peças De Alta Temperatura </div>
+                <div class="product-price">nan</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brfita-termica-spa-1-largura-x-comprimento-cor-natural-/p" target="_blank">
+                <img src="spaturbo.vteximg.com.br/arquivos/ids/174678/ACTERSFB02_ab-ML.jpg" alt="Fita Térmica SPA cor natural 1" largura"/>
+                <div class="product-name">Fita Térmica SPA cor natural 1" largura</div>
+                <div class="product-price">37.168</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brfita-termica-spa-1-largura-x-comprimento-cor-natural-/p" target="_blank">
+                <img src="spaturbo.vteximg.com.br/arquivos/ids/171834/ACTERSFB08-ab.jpg" alt="Fita Térmica SPA cor natural 1" largura"/>
+                <div class="product-name">Fita Térmica SPA cor natural 1" largura</div>
+                <div class="product-price">33.368</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brkit-protetor-termico-de-turbina-universal-dei-engineering/p" target="_blank">
+                <img src="spaturbo.vteximg.com.br/arquivos/ids/174688/ACTERM24--3-.jpg" alt="Kit Protetor Térmico de Turbina Universal DEI Engineering"/>
+                <div class="product-name">Kit Protetor Térmico de Turbina Universal DEI Engineering</div>
+                <div class="product-price">484.048</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brmanta-termica-protetora-siliconada-universal-com-fechamento-por-velcro-290mm/p" target="_blank">
+                <img src="spaturbo.vteximg.com.br/arquivos/ids/194425/ACTERM29---ACTERM28---1-.jpg" alt="Manta Térmica Protetora Siliconada Universal com fechamento por Velcro 290mm"/>
+                <div class="product-name">Manta Térmica Protetora Siliconada Universal com fechamento por Velcro 290mm</div>
+                <div class="product-price">44.768</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brfita-termica-spa-2-largura-x-comprimento-cor-preta-/p" target="_blank">
+                <img src="spaturbo.vteximg.com.br/arquivos/ids/189116/ACTERSFP11_ab_ML.jpg" alt="Fita Térmica SPA cor preta  2" largura"/>
+                <div class="product-name">Fita Térmica SPA cor preta  2" largura</div>
+                <div class="product-price">59.967999999999996</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brfita-termica-spa-2-largura-x-comprimento-cor-preta-/p" target="_blank">
+                <img src="spaturbo.vteximg.com.br/arquivos/ids/189114/ACTERSFP13_ab_ML.jpg" alt="Fita Térmica SPA cor preta  2" largura"/>
+                <div class="product-name">Fita Térmica SPA cor preta  2" largura</div>
+                <div class="product-price">41.72</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brfita-termica-spa-2-largura-x-comprimento-cor-preta-/p" target="_blank">
+                <img src="spaturbo.vteximg.com.br/arquivos/ids/189120/ACTERSFP03_ab_ML.jpg" alt="Fita Térmica SPA cor preta  2" largura"/>
+                <div class="product-name">Fita Térmica SPA cor preta  2" largura</div>
+                <div class="product-price">324.44000000000005</div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="https://www.spaturbo.com.brfita-termica-spa-2-largura-x-comprimento-cor-preta-/p" target="_blank">
+                <img src="spaturbo.vteximg.com.br/arquivos/ids/174597/ACTERSFP06_ab_ML.jpg" alt="Fita Térmica SPA cor preta  2" largura"/>
+                <div class="product-name">Fita Térmica SPA cor preta  2" largura</div>
+                <div class="product-price">264.71999999999997</div>
+            </a>
+        </div>
+        
   </div>
+  <footer>SPA Turbo &copy; Todos os direitos reservados</footer>
 </body>
 </html>
