@@ -1,10 +1,72 @@
 [
   {
-    "sku": "TESTE001",
-    "titulo": "Produto Exemplo SPA",
-    "imagem": "https://via.placeholder.com/300x200?text=Produto+SPA",
-    "preco": 199.99,
-    "link": "https://www.spaturbo.com.br/TESTE001/p",
-    "categoria": "Acessórios"
+    "id": 3,
+    "nome": "2 jogos de adesivo decorativos entrada de ar (4 adesivos)",
+    "link": "https://www.spaturbo.com.br/adesivo-decorativo-entrada-de-ar-4-adesivos/p",
+    "imagem": "",
+    "preco": ""
+  },
+  {
+    "id": 4,
+    "nome": "4 jogos de adesivos decorativos entrada de ar (2 adesivos cada embalagem)",
+    "link": "https://www.spaturbo.com.br/adesivo-decorativo-entrada-de-ar-2-adesivos-/p",
+    "imagem": "",
+    "preco": ""
+  },
+  {
+    "id": 10,
+    "nome": "Chaveiro turbina Verde - 1 unidade",
+    "link": "https://www.spaturbo.com.br/chaveiro-turbina-cromado/p",
+    "imagem": "",
+    "preco": ""
+  },
+  {
+    "id": 11,
+    "nome": "Arraiá Turbinado!  Chaveiro Intercooler 1 unidade (ACCHV27)",
+    "link": "https://www.spaturbo.com.br/chaveiro-intercooler-/p",
+    "imagem": "",
+    "preco": ""
+  },
+  {
+    "id": 13,
+    "nome": "Chaveiro Logo VW - 2 unidades 1 unidade",
+    "link": "https://www.spaturbo.com.br/chaveiro-logo-vw/p",
+    "imagem": "",
+    "preco": ""
+  },
+  {
+    "id": 15,
+    "nome": "Arraiá Turbinado!  Chaveiro Blow off Vermelho - 1 unidade (ACCHV32)",
+    "link": "https://www.spaturbo.com.br/chaveiro-blow-off/p",
+    "imagem": "",
+    "preco": ""
+  },
+  {
+    "id": 16,
+    "nome": "Arraiá Turbinado!  Chaveiro Blow off Preto - 1 unidade (ACCHV33)",
+    "link": "https://www.spaturbo.com.br/chaveiro-blow-off/p",
+    "imagem": "",
+    "preco": ""
+  },
+  {
+    "id": 17,
+    "nome": "Arraiá Turbinado!  Chaveiro Blow off Cromo-Black - 1 unidade (ACCHV34)",
+    "link": "https://www.spaturbo.com.br/chaveiro-blow-off/p",
+    "imagem": "",
+    "preco": ""
+  },
+  {
+    "id": 18,
+    "nome": "Arraiá Turbinado!  Chaveiro Blow off Cromada (ACCHV35)",
+    "link": "https://www.spaturbo.com.br/chaveiro-blow-off/p",
+    "imagem": "",
+    "preco": ""
+  },
+  {
+    "id": 19,
+    "nome": "Arraiá Turbinado!  Chaveiro Pistão e Biela SPA Super A 1 unidade",
+    "link": "https://www.spaturbo.com.br/chaveiro-pistao-e-biela-spa-super-a-/p",
+    "imagem": "",
+    "preco": ""
   }
 ]
