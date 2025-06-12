@@ -2,90 +2,110 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
+<<<<<<< HEAD
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Catálogo SPA Turbo</title>
+=======
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catálogo B2B SPA Turbo</title>
+>>>>>>> b88fdaa (Atualização visual com logo e layout centralizado)
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     header {
+      width: 100%;
       background-color: #000;
       color: white;
-      padding: 20px;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .header-content {
+      max-width: 60%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
     }
-    header img {
+    .header-content img {
       height: 40px;
+      margin-right: 20px;
     }
-    header .contato {
-      font-size: 14px;
-    }
-    .info {
+    .info-bar {
+      width: 100%;
       background-color: #001a71;
       color: white;
-      padding: 20px;
-      font-size: 16px;
-      font-weight: bold;
+      padding: 10px 0;
       text-align: left;
+      font-size: 14px;
+      box-sizing: border-box;
+      padding-left: 20%;
     }
-    .info span {
-      font-weight: normal;
-      display: block;
-      margin-top: 5px;
+    .info-bar strong {
+      font-size: 16px;
+      text-transform: uppercase;
     }
-    .categorias {
+    .container {
+      width: 60%;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding: 30px;
-      gap: 30px;
+      gap: 20px;
+      margin: 20px auto;
     }
-    .categoria {
-      width: 300px;
-      text-align: center;
-    }
-    .categoria img {
+    .category-card {
       width: 300px;
       height: 400px;
-      object-fit: cover;
+      background-color: white;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .categoria span {
-      margin-top: 10px;
-      display: block;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
       font-weight: bold;
-      font-size: 16px;
-      color: #000;
+    }
+    .category-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     footer {
+      width: 100%;
       background-color: #000;
       color: white;
       text-align: center;
-      padding: 15px;
       font-size: 14px;
+      padding: 15px 0;
       margin-top: 40px;
     }
   </style>
 </head>
 <body>
   <header>
+<<<<<<< HEAD
     <img src="logo-spa-turbo.png" alt="SPA Turbo" />
     <div class="contato">
       Em caso de dúvidas, entre em contato com o vendedor que lhe enviou este link.<br />
       WhatsApp: (11) 99687-3840
+=======
+    <div class="header-content">
+      <img src="logo-spa-turbo.png" alt="SPA Turbo" />
+      <div>
+        <div><strong>CATÁLOGO B2B SPA TURBO</strong></div>
+        <div>Lista exclusiva para revendedores e oficinas, válido somente para o mês de junho.<br>*Confira disponibilidade no ato da compra.</div>
+      </div>
+>>>>>>> b88fdaa (Atualização visual com logo e layout centralizado)
     </div>
   </header>
 
-  <div class="info">
-    CATÁLOGO B2B SPA TURBO
-    <span>Lista exclusiva para revendedores e oficinas, válido somente para o mês de junho. <br>*Confira disponibilidade no ato da compra.</span>
+  <div class="info-bar">
+    Em caso de dúvidas, entre em contato com o vendedor que lhe enviou este link ou pelo WhatsApp: (11) 99687-3840.
   </div>
 
+<<<<<<< HEAD
   <div class="categorias">
     <div class="categoria">
       <a href="acessórios.html">
@@ -147,6 +167,19 @@
         <span>Turbinas</span>
       </a>
     </div>
+=======
+  <div class="container">
+    <div class="category-card"><img src="categoria1.jpg" alt="Categoria 1" /></div>
+    <div class="category-card"><img src="categoria2.jpg" alt="Categoria 2" /></div>
+    <div class="category-card"><img src="categoria3.jpg" alt="Categoria 3" /></div>
+    <div class="category-card"><img src="categoria4.jpg" alt="Categoria 4" /></div>
+    <div class="category-card"><img src="categoria5.jpg" alt="Categoria 5" /></div>
+    <div class="category-card"><img src="categoria6.jpg" alt="Categoria 6" /></div>
+    <div class="category-card"><img src="categoria7.jpg" alt="Categoria 7" /></div>
+    <div class="category-card"><img src="categoria8.jpg" alt="Categoria 8" /></div>
+    <div class="category-card"><img src="categoria9.jpg" alt="Categoria 9" /></div>
+    <div class="category-card"><img src="categoria10.jpg" alt="Categoria 10" /></div>
+>>>>>>> b88fdaa (Atualização visual com logo e layout centralizado)
   </div>
 
   <footer>
