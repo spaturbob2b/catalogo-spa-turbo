@@ -6,22 +6,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <style>
     body { font-family: Arial, sans-serif; background: #f7f7f7; margin: 0; padding: 0; }
-    header, footer { background: #001a71; color: #fff; text-align: center; padding: 18px 0; }
-    .categorias, .produtos { max-width: 1240px; margin: 32px auto; padding: 0 16px; }
+
+    /* HEADER */
+    header {
+      background: #001a71;
+      color: #fff !important;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .header-container {
+      max-width: 1240px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      height: 110px;
+      box-sizing: border-box;
+      color: #fff !important;
+    }
+    .header-logo {
+      height: 65px;
+      margin-right: 30px;
+      flex-shrink: 0;
+    }
+    .header-textos {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+      color: #fff !important;
+    }
+    .header-textos b, .header-textos .data-validade, .header-textos .aviso {
+      color: #fff !important;
+    }
+
+    /* GRID CATEGORIAS E PRODUTOS (sem alteração) */
+    .categorias, .produtos {
+      max-width: 1240px;
+      margin: 32px auto;
+      padding: 0 16px;
+    }
     .grid-categorias {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 28px;
+      gap: 32px;
       justify-items: center;
       align-items: stretch;
     }
     .categoria-card {
       background: #fff;
-      border-radius: 14px;
+      border-radius: 12px;
       box-shadow: 0 1px 8px #001a711a;
       text-align: center;
       cursor: pointer;
-      padding: 10px 8px 14px 8px;
+      padding: 14px 8px 18px 8px;
       transition: box-shadow .17s, transform .17s;
       display: flex;
       flex-direction: column;
@@ -33,20 +75,23 @@
       background: #eef4ff;
     }
     .categoria-card img {
-      width: 300px;
-      height: 400px;
+      width: 200px;
+      height: 200px;
       object-fit: cover;
       border-radius: 10px;
       margin-bottom: 12px;
       background: #e8e8e8;
     }
     .categoria-nome {
-      font-size: 1.2rem;
+      font-size: 1.14rem;
       font-weight: bold;
       color: #001a71;
-      margin-top: 6px;
+      margin-top: 7px;
       letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
+
+    /* PRODUTOS */
     .produtos-header {
       display: flex;
       align-items: center;
@@ -68,8 +113,8 @@
     .btn-voltar:hover { background: #00318b; }
     .grid-produtos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
       justify-items: stretch;
     }
     .product-card {
@@ -79,37 +124,77 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 10px 8px 16px 8px;
+      padding: 16px 8px 22px 8px;
       text-align: center;
       height: 100%;
       transition: box-shadow .15s, transform .14s;
     }
     .product-card:hover { box-shadow: 0 6px 20px #001a7122; transform: scale(1.03);}
     .product-card img {
-      width: 100%;
-      max-width: 135px;
-      height: 110px;
-      object-fit: contain;
-      border-radius: 7px;
-      margin-bottom: 8px;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 12px;
       background: #f2f2f2;
     }
-    .product-name { font-size: 1rem; font-weight: bold; margin: 4px 0 3px 0; color: #001a71;}
-    .product-price { font-size: 1.03rem; color: #178430; font-weight: 600; margin: 2px 0 0 0;}
-    /* MOBILE - 2 colunas nas categorias, imagens pequenas proporcionais */
+    .product-name { font-size: 1.01rem; font-weight: bold; margin: 4px 0 6px 0; color: #001a71; text-transform: uppercase;}
+    .product-precos {
+      margin-bottom: 7px;
+      font-size: 1.09em;
+    }
+    .preco-sugerido {
+      color: #8a8a8a;
+      text-decoration: line-through;
+      font-style: italic;
+      margin-right: 10px;
+    }
+    .preco-b2b {
+      color: #178430;
+      font-weight: bold;
+      font-size: 1.13em;
+      letter-spacing: .5px;
+    }
+    .btn-detalhes {
+      display: inline-block;
+      background: #001a71;
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 1em;
+      font-weight: 600;
+      margin-top: 8px;
+      text-decoration: none;
+      transition: background 0.17s, box-shadow 0.17s;
+      box-shadow: 0 2px 8px #001a7122;
+      letter-spacing: 0.5px;
+    }
+    .btn-detalhes:hover {
+      background: #00318b;
+      color: #fff;
+      box-shadow: 0 5px 18px #001a7136;
+    }
+
+    /* MOBILE */
     @media (max-width: 900px) {
+      .header-container { height: auto; flex-direction: column; align-items: flex-start; padding: 18px 8px;}
+      .header-logo { height: 48px; margin-right: 0; margin-bottom: 7px;}
+      .header-textos { font-size: 1em; }
       .grid-categorias { grid-template-columns: repeat(2, 1fr);}
-      .categoria-card img { width: 160px; height: 120px;}
-      .categoria-nome { font-size: 1rem; }
+      .categoria-card img, .product-card img { width: 110px; height: 110px;}
+      .categoria-nome { font-size: 0.95rem; }
+      .grid-produtos { gap: 16px;}
     }
     @media (max-width: 600px) {
-      header, footer { font-size: 1rem; padding: 12px 0;}
-      .categorias, .produtos { margin: 14px auto;}
-      .categoria-card img { width: 120px; height: 90px;}
-      .categoria-nome { font-size: 0.96rem;}
-      .grid-produtos { gap: 12px;}
-      .product-card img { max-width: 75px; height: 48px;}
+      .header-container { padding: 12px 2px; }
+      .header-logo { height: 34px; }
+      .header-textos b { font-size: 1em; }
+      .categoria-card img, .product-card img { width: 80px; height: 80px;}
+      .categoria-nome { font-size: 0.89rem;}
+      .product-name { font-size: 0.89rem;}
+      .grid-produtos { gap: 8px;}
     }
+
     /* Botão flutuante */
     #btn-voltar-flutuante {
       position: fixed;
@@ -132,13 +217,48 @@
     @media (max-width: 600px) {
       #btn-voltar-flutuante { right: 10px; bottom: 14px; width: 44px; height: 44px; font-size: 1.4em;}
     }
+
+    /* RODAPÉ */
+    footer {
+      background: #001a71;
+      color: #fff !important;
+      font-size: 1em;
+      padding: 30px 0 28px 0;
+      margin-top: 48px;
+      width: 100%;
+    }
+    .footer-institucional {
+      max-width: 1240px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.7;
+      font-size: 1.02em;
+      color: #fff !important;
+    }
+    .footer-institucional a {
+      color: #fff !important;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+    @media (max-width: 600px) {
+      .footer-institucional { font-size: 0.92em;}
+    }
   </style>
 </head>
 <body>
+  <!-- HEADER NOVO -->
   <header>
-    <h1>Catálogo SPA Turbo B2B</h1>
+    <div class="header-container">
+      <img src="logo-spa-turbo.png" alt="SPA Turbo Logo" class="header-logo"/>
+      <div class="header-textos">
+        <b>Lista exclusiva para revendedores.</b>
+        <span class="data-validade">Válido somente para o mês de <span id="mesAtual"></span></span>
+        <span class="aviso">*Confira disponibilidade no ato da compra.</span>
+      </div>
+    </div>
   </header>
 
+  <!-- GRID DE CATEGORIAS -->
   <div class="categorias" id="categorias">
     <div class="grid-categorias">
       <div class="categoria-card" data-categoria="Acessórios">
@@ -149,8 +269,8 @@
         <img src="alimentacao.jpg" alt="Alimentação Ar/Combustível">
         <div class="categoria-nome">Alimentação / Combustível</div>
       </div>
-      <div class="categoria-card" data-categoria="Componentes de motor">
-        <img src="componentes.jpg" alt="Componentes de Motor">
+      <div class="categoria-card" data-categoria="Componentes do Motor">
+        <img src="componentes.jpg" alt="Componentes do Motor">
         <div class="categoria-nome">Componentes de Motor</div>
       </div>
       <div class="categoria-card" data-categoria="Ignição e componentes elétricos">
@@ -184,29 +304,57 @@
     </div>
   </div>
 
+  <!-- PRODUTOS -->
   <div class="produtos" id="produtos" style="display:none">
     <div class="produtos-header">
       <button class="btn-voltar" onclick="voltarCategorias()">← Voltar às Categorias</button>
       <h2 id="tituloCategoria" style="margin:0; font-size:1.2em; color:#001a71;"></h2>
     </div>
     <div class="grid-produtos" id="gridProdutos"></div>
-    <!-- Botão extra no final -->
     <div style="text-align:center; margin:38px 0 24px 0;">
       <button class="btn-voltar" onclick="voltarCategorias()">← Voltar às Categorias</button>
     </div>
   </div>
-
   <button id="btn-voltar-flutuante" title="Voltar às categorias" onclick="voltarCategorias()">⮌</button>
 
+  <!-- RODAPÉ INSTITUCIONAL -->
   <footer>
-    SPA Performance Turbo — Catálogo B2B
+    <div class="footer-institucional">
+      Rua Barra Funda, 560 - CEP: 01152-000 - São Paulo - SP - 
+      <a href="https://maps.app.goo.gl/tBM8iJvAWdVe8FkC9" target="_blank">VER MAPA</a> - Próximo à estação Marechal Deodoro da linha Vermelha do Metrô
+      <br>
+      +55 11 3660-2266 / WhatsApp: +55 11 99687-3840
+      <br>
+      Horário de funcionamento: 8:00 às 17:50 de segunda à sexta e 8:30 às 13:00 aos sábados - spaturbo@spaturbo.com.br - Todos os direitos reservados
+      <br>
+      SPA TURBO COMERCIAL, IMPORTADORA E EXPORTADORA LTDA CNPJ 64.764.111/0001-57
+    </div>
   </footer>
 
   <script>
+    // Preencher mês atual
+    const meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+    document.getElementById('mesAtual').innerText = meses[new Date().getMonth()];
+
+    // Carregar produtos
     let dados = [];
     fetch('catalogo_b2b.json').then(r=>r.json()).then(json => { dados = json; });
 
-    // Ativa evento ao clicar em qualquer card de categoria
+    // Suporte a variação de categoria
+    const categoriasMap = {
+      "Acessórios": ["Acessórios"],
+      "Alimentação Ar/Combustível": ["Alimentação Ar/Combustível"],
+      "Componentes do Motor": ["Componentes de motor", "Componentes do Motor"],
+      "Ignição e componentes elétricos": ["Ignição e componentes elétricos"],
+      "Instrumentos": ["Instrumentos"],
+      "Kits Turbo e Componentes": ["Kits Turbo e Componentes"],
+      "Mangueiras e Conexões": ["Mangueiras e Conexões"],
+      "Suspensão, Transmissão e Freios": ["Suspensão, Transmissão e Freios"],
+      "Térmicos": ["Térmicos"],
+      "Turbinas": ["Turbinas"]
+    };
+
+    // Evento de clique nas categorias
     document.querySelectorAll('.categoria-card').forEach(card => {
       card.onclick = () => {
         const categoria = card.getAttribute('data-categoria');
@@ -219,18 +367,24 @@
       document.getElementById('produtos').style.display = 'block';
       document.getElementById('btn-voltar-flutuante').style.display = 'block';
       document.getElementById('tituloCategoria').innerText = categoria;
-      const produtos = dados.filter(p => (p._NomeDepartamento || '') === categoria);
+      // Suporte para nomes variantes na planilha
+      const nomes = categoriasMap[categoria] || [categoria];
+      const produtos = dados.filter(p => nomes.includes((p._NomeDepartamento || '').trim()));
       let html = '';
       produtos.forEach(prod => {
         const urlImg = (prod.image && prod.image.startsWith('http')) 
           ? prod.image 
-          : 'https://via.placeholder.com/135x110?text=SEM+IMAGEM';
+          : 'https://via.placeholder.com/200x200?text=SEM+IMAGEM';
         html += `
           <div class="product-card">
-            <a href="${prod.link}" target="_blank">
+            <a href="${prod.link}" target="_blank" style="text-decoration:none;">
               <img src="${urlImg}" alt="${prod.name}" />
-              <div class="product-name">${prod.name}</div>
-              <div class="product-price">R$ 999,90</div>
+              <div class="product-name">${prod.name.toUpperCase()}</div>
+              <div class="product-precos">
+                <span class="preco-sugerido">R$ 1.299,90</span>
+                <span class="preco-b2b">R$ 999,90</span>
+              </div>
+              <span class="btn-detalhes">Mais Detalhes</span>
             </a>
           </div>
         `;
