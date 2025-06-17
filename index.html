@@ -44,7 +44,23 @@
       color: #fff !important;
     }
 
-    /* GRID CATEGORIAS E PRODUTOS (sem alteração) */
+    /* Faixa de DÚVIDAS */
+    .faixa-duvidas {
+      background: #e7effc;
+      color: #222 !important;
+      font-size: 1.10em;
+      font-weight: bold;
+      padding: 14px 0 14px 0;
+      text-align: center;
+      border-bottom: 1px solid #c3d2e9;
+      letter-spacing: 0.5px;
+    }
+    .faixa-duvidas span {
+      color: #001a71 !important;
+      font-weight: 700;
+    }
+
+    /* GRID CATEGORIAS */
     .categorias, .produtos {
       max-width: 1240px;
       margin: 32px auto;
@@ -63,11 +79,17 @@
       box-shadow: 0 1px 8px #001a711a;
       text-align: center;
       cursor: pointer;
-      padding: 14px 8px 18px 8px;
+      padding: 18px 8px 16px 8px;
       transition: box-shadow .17s, transform .17s;
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 255px;
+      min-width: 185px;
+      max-width: 240px;
+      width: 100%;
+      justify-content: flex-start;
+      box-sizing: border-box;
     }
     .categoria-card:hover {
       box-shadow: 0 4px 16px #001a7138;
@@ -75,20 +97,26 @@
       background: #eef4ff;
     }
     .categoria-card img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
+      width: 115px;
+      height: 115px;
+      object-fit: contain;
       border-radius: 10px;
-      margin-bottom: 12px;
+      margin-bottom: 15px;
       background: #e8e8e8;
+      display: block;
     }
     .categoria-nome {
-      font-size: 1.14rem;
+      font-size: 1.10rem;
       font-weight: bold;
       color: #001a71;
       margin-top: 7px;
       letter-spacing: 0.5px;
       text-transform: uppercase;
+      word-break: break-word;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     /* PRODUTOS */
@@ -113,9 +141,11 @@
     .btn-voltar:hover { background: #00318b; }
     .grid-produtos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 38px 28px;
       justify-items: stretch;
+      align-items: stretch;
+      margin-bottom: 48px;
     }
     .product-card {
       background: #fff;
@@ -124,36 +154,69 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 16px 8px 22px 8px;
+      padding: 20px 8px 24px 8px;
       text-align: center;
       height: 100%;
-      transition: box-shadow .15s, transform .14s;
+      min-height: 345px;
+      justify-content: flex-start;
+      position: relative;
     }
-    .product-card:hover { box-shadow: 0 6px 20px #001a7122; transform: scale(1.03);}
     .product-card img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
+      width: 136px;
+      height: 136px;
+      object-fit: contain;
       border-radius: 10px;
       margin-bottom: 12px;
       background: #f2f2f2;
+      display: block;
     }
-    .product-name { font-size: 1.01rem; font-weight: bold; margin: 4px 0 6px 0; color: #001a71; text-transform: uppercase;}
+    .product-name { 
+      font-size: 1.01rem; 
+      font-weight: bold; 
+      margin: 4px 0 10px 0; 
+      color: #001a71; 
+      text-transform: uppercase;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      word-break: break-word;
+    }
     .product-precos {
-      margin-bottom: 7px;
-      font-size: 1.09em;
+      margin-bottom: 11px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 54px;
+      justify-content: flex-end;
     }
     .preco-sugerido {
       color: #8a8a8a;
       text-decoration: line-through;
       font-style: italic;
-      margin-right: 10px;
+      margin-bottom: 2px;
+      font-size: .97em;
+    }
+    .preco-label {
+      color: #444;
+      font-style: italic;
+      font-size: .97em;
+      margin-right: 4px;
+    }
+    .preco-b2b-label {
+      color: #001a71;
+      font-size: .98em;
+      font-weight: 600;
+      margin-bottom: 2px;
+      margin-right: 4px;
+      font-style: normal;
     }
     .preco-b2b {
       color: #178430;
       font-weight: bold;
       font-size: 1.13em;
       letter-spacing: .5px;
+      margin-bottom: 1px;
     }
     .btn-detalhes {
       display: inline-block;
@@ -163,11 +226,17 @@
       border-radius: 6px;
       font-size: 1em;
       font-weight: 600;
-      margin-top: 8px;
+      margin-top: auto;
+      margin-bottom: 0;
       text-decoration: none;
       transition: background 0.17s, box-shadow 0.17s;
       box-shadow: 0 2px 8px #001a7122;
       letter-spacing: 0.5px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 22px;
+      min-width: 125px;
     }
     .btn-detalhes:hover {
       background: #00318b;
@@ -175,24 +244,31 @@
       box-shadow: 0 5px 18px #001a7136;
     }
 
+    /* Mais espaçamento no rodapé da vitrine */
+    .espaco-final-vitrine { min-height: 38px; }
+
     /* MOBILE */
     @media (max-width: 900px) {
       .header-container { height: auto; flex-direction: column; align-items: flex-start; padding: 18px 8px;}
       .header-logo { height: 48px; margin-right: 0; margin-bottom: 7px;}
       .header-textos { font-size: 1em; }
       .grid-categorias { grid-template-columns: repeat(2, 1fr);}
-      .categoria-card img, .product-card img { width: 110px; height: 110px;}
+      .categoria-card img, .product-card img { width: 80px; height: 80px;}
+      .categoria-card, .product-card { min-height: 205px; }
       .categoria-nome { font-size: 0.95rem; }
-      .grid-produtos { gap: 16px;}
+      .grid-produtos { grid-template-columns: repeat(2, 1fr); gap: 22px 10px;}
+      .product-card { min-height: 285px; }
+      .product-card img { width: 110px; height: 110px; }
     }
     @media (max-width: 600px) {
       .header-container { padding: 12px 2px; }
       .header-logo { height: 34px; }
       .header-textos b { font-size: 1em; }
-      .categoria-card img, .product-card img { width: 80px; height: 80px;}
+      .categoria-card img, .product-card img { width: 60px; height: 60px;}
       .categoria-nome { font-size: 0.89rem;}
       .product-name { font-size: 0.89rem;}
-      .grid-produtos { gap: 8px;}
+      .grid-produtos { gap: 8px 5px;}
+      .categoria-card, .product-card { min-height: 145px;}
     }
 
     /* Botão flutuante */
@@ -246,7 +322,7 @@
   </style>
 </head>
 <body>
-  <!-- HEADER NOVO -->
+  <!-- HEADER -->
   <header>
     <div class="header-container">
       <img src="logo-spa-turbo.png" alt="SPA Turbo Logo" class="header-logo"/>
@@ -257,7 +333,10 @@
       </div>
     </div>
   </header>
-
+  <!-- FAIXA DÚVIDAS -->
+  <div class="faixa-duvidas">
+    Dúvidas? Fale com o vendedor que enviou este catálogo ou com nosso time de vendas no WhatsApp: <span>+55 11 99687-3840</span>.
+  </div>
   <!-- GRID DE CATEGORIAS -->
   <div class="categorias" id="categorias">
     <div class="grid-categorias">
@@ -311,7 +390,8 @@
       <h2 id="tituloCategoria" style="margin:0; font-size:1.2em; color:#001a71;"></h2>
     </div>
     <div class="grid-produtos" id="gridProdutos"></div>
-    <div style="text-align:center; margin:38px 0 24px 0;">
+    <div class="espaco-final-vitrine"></div>
+    <div style="text-align:center; margin:44px 0 24px 0;">
       <button class="btn-voltar" onclick="voltarCategorias()">← Voltar às Categorias</button>
     </div>
   </div>
@@ -321,7 +401,7 @@
   <footer>
     <div class="footer-institucional">
       Rua Barra Funda, 560 - CEP: 01152-000 - São Paulo - SP - 
-      <a href="https://maps.app.goo.gl/tBM8iJvAWdVe8FkC9" target="_blank">VER MAPA</a> - Próximo à estação Marechal Deodoro da linha Vermelha do Metrô
+      <a href="https://maps.app.goo.gl/TXbfcKX1H5aPLspf7" target="_blank">VER MAPA</a> - Próximo à estação Marechal Deodoro da linha Vermelha do Metrô
       <br>
       +55 11 3660-2266 / WhatsApp: +55 11 99687-3840
       <br>
@@ -354,51 +434,49 @@
       "Turbinas": ["Turbinas"]
     };
 
-    // Evento de clique nas categorias
-    document.querySelectorAll('.categoria-card').forEach(card => {
-      card.onclick = () => {
-        const categoria = card.getAttribute('data-categoria');
-        mostrarProdutos(categoria);
-      };
-    });
-
-    function mostrarProdutos(categoria) {
-      document.getElementById('categorias').style.display = 'none';
-      document.getElementById('produtos').style.display = 'block';
-      document.getElementById('btn-voltar-flutuante').style.display = 'block';
-      document.getElementById('tituloCategoria').innerText = categoria;
-      // Suporte para nomes variantes na planilha
-      const nomes = categoriasMap[categoria] || [categoria];
-      const produtos = dados.filter(p => nomes.includes((p._NomeDepartamento || '').trim()));
-      let html = '';
-      produtos.forEach(prod => {
-        const urlImg = (prod.image && prod.image.startsWith('http')) 
-          ? prod.image 
-          : 'https://via.placeholder.com/200x200?text=SEM+IMAGEM';
-        html += `
+    // Troca para página de produtos
+    document.querySelectorAll('.categoria-card').forEach(card=>{
+      card.onclick = ()=>{
+        document.getElementById('categorias').style.display = 'none';
+        document.getElementById('produtos').style.display = 'block';
+        document.getElementById('btn-voltar-flutuante').style.display = 'block';
+        let categoria = card.getAttribute('data-categoria');
+        document.getElementById('tituloCategoria').innerText = categoria;
+        let nomesCat = categoriasMap[categoria] || [categoria];
+        let lista = dados.filter(p => nomesCat.includes(p._NomeDepartamento));
+        let html = lista.map(prod => `
           <div class="product-card">
-            <a href="${prod.link}" target="_blank" style="text-decoration:none;">
-              <img src="${urlImg}" alt="${prod.name}" />
-              <div class="product-name">${prod.name.toUpperCase()}</div>
-              <div class="product-precos">
-                <span class="preco-sugerido">R$ 1.299,90</span>
-                <span class="preco-b2b">R$ 999,90</span>
-              </div>
-              <span class="btn-detalhes">Mais Detalhes</span>
-            </a>
+            <img src="${prod.image}" alt="${prod.name}">
+            <div class="product-name">${prod.name}</div>
+            <div class="product-precos">
+              <span class="preco-sugerido"><span class="preco-label">Preço sugerido</span> R$ 1.299,90</span>
+              <span class="preco-b2b"><span class="preco-b2b-label">Preço B2B</span> R$ 999,90</span>
+            </div>
+            <a class="btn-detalhes" href="${prod.link}" target="_blank">Mais Detalhes</a>
           </div>
-        `;
-      });
-      document.getElementById('gridProdutos').innerHTML = html || "<p style='grid-column: 1/-1; text-align:center;'>Nenhum produto encontrado.</p>";
-      window.scrollTo(0,0);
-    }
-
-    function voltarCategorias() {
+        `).join('');
+        document.getElementById('gridProdutos').innerHTML = html;
+        window.scrollTo(0,0);
+      }
+    });
+    function voltarCategorias(){
       document.getElementById('produtos').style.display = 'none';
       document.getElementById('categorias').style.display = 'block';
       document.getElementById('btn-voltar-flutuante').style.display = 'none';
       window.scrollTo(0,0);
     }
+    // Esconde botão flutuante se não estiver na vitrine
+    window.addEventListener('scroll',()=>{
+      let btn = document.getElementById('btn-voltar-flutuante');
+      if(document.getElementById('produtos').style.display=='block' && window.scrollY > 300){
+        btn.style.display = 'block';
+      }
+      else if(document.getElementById('produtos').style.display=='block'){
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+    });
   </script>
 </body>
 </html>
