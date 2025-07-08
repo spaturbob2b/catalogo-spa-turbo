@@ -2,401 +2,353 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Catálogo SPA Turbo B2B</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --azul-spa: #092c73;
+      --azul-spa-claro: #5788f7;
+      --cinza-bg: #f6f6f7;
+      --radius: 22px;
+      --max-width: 1600px;
+    }
+    * { box-sizing: border-box; }
     body {
       font-family: 'Montserrat', Arial, sans-serif;
-      background: #f7f7f7;
       margin: 0;
-      padding: 0;
+      background: var(--cinza-bg);
+      color: #111;
     }
-    .header {
-      background: #001a71;
+    .header-top {
+      background: var(--azul-spa);
       color: #fff;
-      min-height: 120px;
+      padding: 0 0 0 0;
       display: flex;
       align-items: center;
+      min-height: 104px;
       justify-content: space-between;
-      padding: 0 54px 0 54px;
+      gap: 40px;
+      flex-wrap: wrap;
     }
-    .header .logo {
-      display: flex;
-      align-items: center;
-      height: 105px;
+    .logo {
+      max-height: 70px;
+      margin-left: 36px;
+      margin-right: 24px;
     }
-    .header .logo img {
-      height: 82px;
-      width: auto;
-      margin-right: 12px;
-    }
-    .header .infos {
+    .header-content {
       flex: 1;
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
       justify-content: center;
-      padding-left: 32px;
+      min-width: 300px;
     }
-    .header .infos b {
+    .header-titulo {
+      font-weight: 900;
       font-size: 2rem;
-      letter-spacing: 0.5px;
-      font-weight: bold;
-      margin-bottom: 6px;
-    }
-    .header .infos .subinfo {
-      font-size: 1.13rem;
-      font-weight: 400;
+      margin-bottom: 2px;
+      letter-spacing: 1px;
       color: #fff;
-      margin-bottom: 4px;
     }
-    .header .infos .subinfo small { font-style: italic; }
-    .subheader {
-      background: #5d89f7;
+    .header-desc {
+      font-size: 1.09rem;
+      font-weight: 500;
+      color: #e5eaf8;
+      line-height: 1.18;
+      margin-bottom: 2px;
+    }
+    .header-obs {
+      font-size: .93rem;
+      color: #c4dafb;
+      margin-bottom: 0;
+      font-style: italic;
+    }
+    .header-alerta {
+      background: var(--azul-spa-claro);
       color: #fff;
-      font-size: 1.18rem;
+      font-weight: 700;
       text-align: center;
-      padding: 11px 8vw 11px 8vw;
-      font-weight: bold;
-      letter-spacing: .01em;
-      margin-bottom: 28px;
+      padding: 12px 0 10px 0;
+      font-size: 1.18rem;
     }
-    .categorias {
-      max-width: 1600px;
+    .container {
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0 22px;
-      transition: 0.2s;
+      padding: 36px 16px 16px 16px;
     }
-    .grid-categorias {
+    /* Home Categorias */
+    #categorias {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 38px 28px;
-      justify-items: center;
-      align-items: stretch;
-      margin-bottom: 44px;
-      transition: 0.2s;
+      gap: 32px 18px;
+      justify-content: center;
+      margin-top: 0;
     }
     .categoria-card {
       background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 1px 14px #001a7118;
-      text-align: center;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 14px 0 rgba(9,44,115,0.06);
+      padding: 0 0 18px 0;
+      transition: transform .14s;
       cursor: pointer;
-      padding: 18px 10px 18px 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 440px;
-      width: 300px;
-      box-sizing: border-box;
-      transition: box-shadow .15s, transform .13s;
-      outline: 0;
     }
-    .categoria-card:hover, .categoria-card:focus {
-      box-shadow: 0 8px 28px #001a7127;
-      transform: scale(1.03);
-      background: #f1f6ff;
+    .categoria-card:hover {
+      transform: translateY(-6px) scale(1.022);
+      box-shadow: 0 6px 32px 0 rgba(9,44,115,0.10);
     }
-    .categoria-card img {
+    .categoria-img {
       width: 300px;
       height: 400px;
       object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 16px;
-      background: #e8e8e8;
-      display: block;
-      box-shadow: 0 2px 10px #001a7115;
+      border-radius: var(--radius) var(--radius) 0 0;
+      margin-bottom: 12px;
     }
     .categoria-nome {
-      font-size: 1.15rem;
-      font-weight: bold;
-      color: #001a71;
-      margin-top: 8px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      word-break: keep-all;
-      white-space: normal;
-      overflow-wrap: break-word;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--azul-spa);
       text-align: center;
-      min-height: 2.7em;
-      max-height: 3.5em;
-      padding: 0 6px;
-      transition: 0.2s;
+      letter-spacing: .5px;
     }
-    .btn-voltar {
-      margin: 30px 0 25px 0;
-      background: #001a71;
-      color: #fff;
-      border: 0;
-      font-size: 1.05rem;
-      padding: 12px 32px;
-      border-radius: 22px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background .16s;
-      box-shadow: 0 2px 8px #001a7113;
-      display: block;
+    /* Vitrine */
+    #produtosVitrine {
+      display: none;
     }
-    .btn-voltar:hover {
-      background: #456bf7;
-    }
-    .produtos-vitrine {
-      max-width: 1650px;
-      margin: 0 auto;
-      padding: 0 24px 0 24px;
-      min-height: 260px;
-    }
-    .produtos-grid {
+    #produtosGrid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 36px 22px;
+      gap: 36px 18px;
+      margin-top: 24px;
       margin-bottom: 36px;
-      justify-items: center;
-      align-items: stretch;
     }
     .produto-card {
       background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 1px 14px #001a7112;
-      padding: 18px 12px 24px 12px;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 14px 0 rgba(9,44,115,0.08);
+      padding: 20px 18px 28px 18px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center;
-      min-height: 480px;
-      width: 295px;
-      box-sizing: border-box;
-      transition: box-shadow .14s;
-      position: relative;
-      margin-bottom: 0;
+      min-height: 428px;
     }
     .produto-card img {
-      width: 220px;
-      height: 220px;
+      width: 200px;
+      height: 200px;
       object-fit: contain;
-      border-radius: 10px;
-      margin-bottom: 18px;
-      background: #e8e8e8;
-      box-shadow: 0 2px 10px #001a7115;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      background: #f2f6fa;
     }
     .produto-nome {
-      font-size: 1.12rem;
-      font-weight: bold;
-      color: #001a71;
-      margin-bottom: 10px;
-      min-height: 58px;
-      display: flex;
-      align-items: center;
+      font-size: 1.13rem;
+      font-weight: 700;
       text-align: center;
-      justify-content: center;
+      min-height: 54px;
+      margin-bottom: 2px;
+      color: #0f2063;
+    }
+    .produto-sku {
+      font-size: 1.07rem;
+      font-weight: 500;
+      color: #222;
+      letter-spacing: 1px;
+      margin: 2px 0 8px 0;
+      text-align: center;
     }
     .produto-precos {
-      margin-bottom: 17px;
-      margin-top: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0;
+      margin-bottom: 18px;
+      margin-top: 2px;
     }
     .preco-sugerido {
-      font-size: 1.04rem;
-      color: #555;
+      color: #707070;
+      font-size: 1.01rem;
       font-style: italic;
       text-decoration: line-through;
-      margin-bottom: 1px;
+      margin-bottom: 0;
       font-weight: 400;
     }
     .preco-b2b {
-      font-size: 1.26rem;
-      color: #111;
+      color: #0c131b;
       font-weight: bold;
-      margin-top: 0;
+      font-size: 1.19rem;
+      letter-spacing: 0.5px;
+      margin-top: -2px;
     }
     .produto-cta {
-      background: #144ef7;
+      background: var(--azul-spa);
       color: #fff;
-      border: 0;
+      padding: 10px 28px;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
       font-size: 1.06rem;
-      padding: 10px 24px;
-      border-radius: 16px;
-      font-weight: 600;
-      cursor: pointer;
       margin-top: auto;
-      transition: background .13s;
-      box-shadow: 0 2px 8px #001a7113;
-      margin-bottom: 0;
+      transition: background .14s;
+      box-shadow: 0 1px 10px #b2b8c5a8;
     }
     .produto-cta:hover {
-      background: #001a71;
-    }
-    .produtos-fim {
-      height: 36px;
-    }
-    .rodape {
-      background: #001a71;
+      background: #0b42a1;
       color: #fff;
-      font-size: 1rem;
-      text-align: center;
-      padding: 26px 6vw 22px 6vw;
-      font-family: 'Montserrat', Arial, sans-serif;
-      margin-top: 60px;
     }
-    .rodape a {
+    .voltar-btn {
+      background: var(--azul-spa);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 22px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 36px;
+      margin-top: 0;
+      cursor: pointer;
+      box-shadow: 0 1px 12px #b2b8c578;
+      transition: background .14s;
+      display: inline-block;
+    }
+    .voltar-btn:hover { background: #0b42a1; }
+    /* Títulos */
+    .titulo-categoria {
+      font-size: 2.3rem;
+      font-weight: 900;
+      color: var(--azul-spa);
+      margin-bottom: 0;
+      margin-top: 8px;
+      letter-spacing: .2px;
+    }
+    /* Rodapé */
+    .footer {
+      background: var(--azul-spa);
+      color: #fff !important;
+      padding: 40px 0 12px 0;
+      text-align: center;
+      font-size: 1.06rem;
+      font-weight: 500;
+      margin-top: 0;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+    .footer a, .footer a:visited, .footer a:hover {
       color: #fff;
       text-decoration: underline;
+      font-weight: 700;
     }
-    .rodape strong { color: #fff; }
-    @media (max-width: 1300px) {
-      .grid-categorias, .produtos-grid { grid-template-columns: repeat(3, 1fr); }
+    /* Responsivo */
+    @media (max-width: 1200px) {
+      #categorias, #produtosGrid { grid-template-columns: repeat(3, 1fr); }
+      .categoria-img { width: 90vw; max-width: 300px; }
     }
-    @media (max-width: 1020px) {
-      .produtos-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 900px) {
-      .grid-categorias { grid-template-columns: repeat(2, 1fr); }
-      .categoria-card, .categoria-card img { width: 97vw; max-width: 180px; min-width: 135px; min-height: 160px; }
-      .categoria-card img { height: 230px; }
-      .header { flex-direction: column; align-items: flex-start; min-height: 100px; padding: 0 10px 0 10px;}
-      .header .infos { align-items: flex-start; padding-left: 0;}
-      .produtos-grid { grid-template-columns: repeat(2, 1fr);}
-      .produto-card, .produto-card img { max-width: 330px;}
+    @media (max-width: 920px) {
+      #categorias, #produtosGrid { grid-template-columns: repeat(2, 1fr); }
+      .container { padding: 22px 4vw 12px 4vw; }
     }
     @media (max-width: 700px) {
-      .grid-categorias { grid-template-columns: repeat(2, 1fr); gap: 18px 4px; }
-      .categoria-card, .categoria-card img { max-width: 145px; min-width: 110px;}
-      .categoria-card img { height: 135px; }
-      .categoria-nome {
-        font-size: 0.93rem;
-        padding: 3px 2px 0 2px;
-        line-height: 1.16;
-        min-height: unset;
-        max-width: 96%;
-        margin: 0 auto;
-        word-break: keep-all;
-        white-space: normal;
-        overflow-wrap: break-word;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 2.5em;
-        max-height: 3em;
-      }
-      .header .logo img { height: 44px; }
-      .header .infos b { font-size: 1.15rem;}
-      .subheader { font-size: 0.95rem; padding: 6px 2vw;}
-      .produtos-grid { grid-template-columns: 1fr;}
-      .produto-card, .produto-card img { max-width: 98vw;}
-      .produto-card img { height: 190px;}
-      .produto-precos .preco-sugerido, .produto-precos .preco-b2b { font-size: 1.03rem;}
-      .produto-precos .preco-sugerido { text-decoration: none; font-style: normal; color: #111;}
-      .produto-precos .preco-b2b { font-size: 1.11rem;}
+      .header-top, .header-content { flex-direction: column; align-items: flex-start; gap: 10px;}
+      .logo { margin-left: 14px; max-height: 52px; }
+      .header-content { padding: 0 10px; }
+      .header-titulo { font-size: 1.21rem; }
+      #categorias, #produtosGrid { grid-template-columns: repeat(2, 1fr); gap: 22px 10px;}
+      .categoria-img { width: 41vw; height: 150px; max-width: 200px;}
+      .categoria-card { min-width: 0; }
+      .produto-card img { width: 100px; height: 100px;}
+      .produto-card { padding: 12px 4px 18px 4px; min-height: 0;}
+      .produto-nome { font-size: 1rem; min-height: 0;}
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="logo">
-      <img src="logo-spa-turbo.png" alt="SPA Turbo Logo" />
-    </div>
-    <div class="infos">
-      <b>CATÁLOGO B2B SPA TURBO</b>
-      <span class="subinfo">
-        Lista exclusiva para revendedores e oficinas, válido somente para o mês de junho.<br>
-        <small>*Confira disponibilidade no ato da compra.</small>
-      </span>
+  <div class="header-top">
+    <img src="logo-spa-turbo.png" alt="SPA Turbo Logo" class="logo">
+    <div class="header-content">
+      <div class="header-titulo">CATÁLOGO B2B SPA TURBO</div>
+      <div class="header-desc">
+        Lista exclusiva para revendedores e oficinas, válido somente para o mês de junho.
+      </div>
+      <div class="header-obs">
+        *Confira disponibilidade no ato da compra.
+      </div>
     </div>
   </div>
-  <div class="subheader">
+  <div class="header-alerta">
     Dúvidas? Fale com o vendedor que enviou este catálogo ou com nosso time de vendas no WhatsApp: +55 11 99687-3840.
   </div>
-  <div class="categorias" id="categorias">
-    <div class="grid-categorias">
-      <div class="categoria-card" tabindex="0" onclick="mostrarProdutos('Acessórios')">
-        <img src="acessorios.jpg" alt="Acessórios">
-        <div class="categoria-nome">Acessórios</div>
-      </div>
-      <div class="categoria-card" tabindex="0" onclick="mostrarProdutos('Alimentação / Combustível')">
-        <img src="alimentacao.jpg" alt="Alimentação Ar/Combustível">
-        <div class="categoria-nome">Alimentação / Combustível</div>
-      </div>
-      <div class="categoria-card" tabindex="0" onclick="mostrarProdutos('Componentes de Motor')">
-        <img src="componentes.jpg" alt="Componentes de Motor">
-        <div class="categoria-nome">Componentes de Motor</div>
-      </div>
-      <div class="categoria-card" tabindex="0" onclick="mostrarProdutos('Ignição e Elétricos')">
-        <img src="ignicao.jpg" alt="Ignição e Componentes Elétricos">
-        <div class="categoria-nome">Ignição e Elétricos</div>
-      </div>
-      <div class="categoria-card" tabindex="0" onclick="mostrarProdutos('Instrumentos')">
-        <img src="instrumentos.jpg" alt="Instrumentos">
-        <div class="categoria-nome">Instrumentos</div>
-      </div>
-      <div class="categoria-card" tabindex="0" onclick="mostrarProdutos('Kits Turbo')">
-        <img src="kits-turbo.jpg" alt="Kits Turbo e Componentes">
-        <div class="categoria-nome">Kits Turbo</div>
-      </div>
-      <div class="categoria-card" tabindex="0" onclick="mostrarProdutos('Mangueiras e Conexões')">
-        <img src="mangueiras.jpg" alt="Mangueiras e Conexões">
-        <div class="categoria-nome">Mangueiras e Conexões</div>
-      </div>
-      <div class="categoria-card" tabindex="0" onclick="mostrarProdutos('Suspensão e Freios')">
-        <img src="suspensao.jpg" alt="Suspensão, Transmissão e Freios">
-        <div class="categoria-nome">Suspensão e Freios</div>
-      </div>
-      <div class="categoria-card" tabindex="0" onclick="mostrarProdutos('Térmicos')">
-        <img src="termicos.jpg" alt="Térmicos">
-        <div class="categoria-nome">Térmicos</div>
-      </div>
-      <div class="categoria-card" tabindex="0" onclick="mostrarProdutos('Turbinas')">
-        <img src="turbinas.jpg" alt="Turbinas">
-        <div class="categoria-nome">Turbinas</div>
-      </div>
+
+  <div class="container">
+    <!-- CATEGORIAS -->
+    <div id="categorias"></div>
+
+    <!-- VITRINE PRODUTOS -->
+    <div id="produtosVitrine">
+      <button class="voltar-btn" onclick="voltarCategorias()">← Voltar às Categorias</button>
+      <div class="titulo-categoria" id="tituloCategoria"></div>
+      <div id="produtosGrid"></div>
+      <button class="voltar-btn" onclick="voltarCategorias()">← Voltar às Categorias</button>
     </div>
   </div>
-  <div class="produtos-vitrine" id="produtosVitrine" style="display: none;">
-    <button class="btn-voltar" onclick="voltarCategorias()">← Voltar às Categorias</button>
-    <h2 id="tituloCategoria" style="color:#001a71;text-align:left;margin:6px 0 25px 0;font-size:2.0rem"></h2>
-    <div class="produtos-grid" id="produtosGrid"></div>
-    <button class="btn-voltar" onclick="voltarCategorias()">← Voltar às Categorias</button>
-    <div class="produtos-fim"></div>
-  </div>
-  <div class="rodape">
-    Rua Barra Funda, 560 - CEP: 01152-000 - São Paulo - SP -
-    <a href="https://maps.google.com/?q=Rua Barra Funda, 560, São Paulo, SP" target="_blank">VER MAPA</a> - Próximo à estação Marechal Deodoro da linha Vermelha do Metrô<br>
+  <div class="footer">
+    Rua Barra Funda, 560 - CEP: 01152-000 - São Paulo - SP - <a href="https://maps.app.goo.gl/N2pEFXh4H2ybECXY8" target="_blank">VER MAPA</a> - Próximo à estação Marechal Deodoro da linha Vermelha do Metrô <br>
     +55 11 3660-2266 / WhatsApp: +55 11 99687-3840<br>
     Horário de funcionamento: 8:00 às 17:50 de segunda à sexta e 8:30 às 13:00 aos sábados - <a href="mailto:spaturbo@spaturbo.com.br">spaturbo@spaturbo.com.br</a> - Todos os direitos reservados<br>
-    <strong>SPA TURBO COMERCIAL, IMPORTADORA E EXPORTADORA LTDA CNPJ 64.764.111/0001-57</strong>
+    SPA TURBO COMERCIAL, IMPORTADORA E EXPORTADORA LTDA CNPJ 64.764.111/0001-57
   </div>
   <script>
-    let produtos = [];
+    // Categorias
+    const categorias = [
+      { nome: 'Acessórios', imagem: 'acessorios.jpg' },
+      { nome: 'Alimentação Ar/Combustível', imagem: 'alimentacao.jpg' },
+      { nome: 'Componentes de Motor', imagem: 'componentes.jpg' },
+      { nome: 'Ignição e Componentes Elétricos', imagem: 'ignicao.jpg' },
+      { nome: 'Instrumentos', imagem: 'instrumentos.jpg' },
+      { nome: 'Kits Turbo e Componentes', imagem: 'kits-turbo.jpg' },
+      { nome: 'Mangueiras e Conexões', imagem: 'mangueiras.jpg' },
+      { nome: 'Suspensão, Transmissão e Freios', imagem: 'suspensao.jpg' },
+      { nome: 'Térmicos', imagem: 'termicos.jpg' },
+      { nome: 'Turbinas', imagem: 'turbinas.jpg' }
+    ];
 
-    async function carregarJSON() {
-      try {
-        const resp = await fetch('catalogo_b2b.json');
-        produtos = await resp.json();
-      } catch(e) {
-        alert('Falha ao carregar o catálogo de produtos.');
-        produtos = [];
+    // Exibe as categorias na Home
+    function mostrarCategorias() {
+      let html = '';
+      for (const cat of categorias) {
+        html += `
+        <div class="categoria-card" onclick="mostrarProdutos('${cat.nome.replace(/'/g, "\\'")}')">
+          <img src="${cat.imagem}" class="categoria-img" alt="${cat.nome}">
+          <div class="categoria-nome">${cat.nome}</div>
+        </div>`;
       }
+      document.getElementById('categorias').innerHTML = html;
     }
 
+    // Carrega o JSON dos produtos
+    let produtos = [];
+    function carregarJSON() {
+      fetch('catalogo_b2b.json')
+        .then(r => r.json())
+        .then(json => { produtos = json; mostrarCategorias(); })
+        .catch(() => alert('Falha ao carregar catálogo de produtos.'));
+    }
+
+    // Mapeamento dos nomes de categoria para garantir o filtro certo
     function padronizarCategoria(nome) {
-      // Corrige variações e padroniza nomes
+      if (!nome) return '';
       const map = {
         "Acessórios": "Acessórios",
-        "Alimentação Ar/Combustível": "Alimentação / Combustível",
-        "Alimentação / Combustível": "Alimentação / Combustível",
-        "Kits Turbo e Componentes": "Kits Turbo",
-        "Kits Turbo": "Kits Turbo",
-        "Componentes do Motor": "Componentes de Motor",
+        "acessorios": "Acessórios",
+        "Alimentação Ar/Combustível": "Alimentação Ar/Combustível",
+        "Alimentação / Combustível": "Alimentação Ar/Combustível",
+        "Alimentação/Combustível": "Alimentação Ar/Combustível",
+        "alimentacao": "Alimentação Ar/Combustível",
         "Componentes de Motor": "Componentes de Motor",
-        "Ignição e componentes elétricos": "Ignição e Elétricos",
-        "Ignição e Elétricos": "Ignição e Elétricos",
+        "Componentes do Motor": "Componentes de Motor",
+        "componentes": "Componentes de Motor",
+        "Ignição e Componentes Elétricos": "Ignição e Componentes Elétricos",
+        "Ignição e Elétricos": "Ignição e Componentes Elétricos",
         "Instrumentos": "Instrumentos",
         "Mangueiras e Conexões": "Mangueiras e Conexões",
         "Suspensão, Transmissão e Freios": "Suspensão e Freios",
@@ -407,6 +359,7 @@
       return map[nome?.trim()] || nome?.trim();
     }
 
+    // Exibe os produtos filtrados pela categoria
     function mostrarProdutos(nomeCategoria) {
       const padCategoria = padronizarCategoria(nomeCategoria);
       const lista = produtos.filter(p =>
@@ -418,6 +371,7 @@
       } else {
         for (const produto of lista) {
           let nome = produto._NomeSKU || produto.name || produto._NomeProduto || produto.sku || '';
+          let sku = produto.sku || produto._CodigoReferenciaSKU || produto._IDSKU || '';
           let precoSugerido = 'R$ 1.299,90';
           let precoB2B = 'R$ 999,90';
           let image = produto.image || produto._images || '';
@@ -426,6 +380,7 @@
             <div class="produto-card">
               <img src="${image}" alt="${nome.replace(/"/g, '&quot;')}">
               <div class="produto-nome">${nome}</div>
+              <div class="produto-sku">${sku}</div>
               <div class="produto-precos">
                 <span class="preco-sugerido">Preço sugerido ${precoSugerido}</span>
                 <span class="preco-b2b">Preço B2B ${precoB2B}</span>
@@ -444,7 +399,7 @@
 
     function voltarCategorias() {
       document.getElementById('produtosVitrine').style.display = "none";
-      document.getElementById('categorias').style.display = "block";
+      document.getElementById('categorias').style.display = "grid";
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
